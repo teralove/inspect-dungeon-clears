@@ -26,11 +26,11 @@ module.exports = function InspectDungeonClears(dispatch) {
         9727: "MCNM",
     };
     
-    let playerName,
+    let playerId,
     targetName;
     
     dispatch.hook('S_LOGIN', 10, (event) => {
-        playerName = event.name;
+        playerName = event.playerId;
     });
     
     dispatch.hook('C_DUNGEON_CLEAR_COUNT_LIST', 1, (event) => {
@@ -38,7 +38,7 @@ module.exports = function InspectDungeonClears(dispatch) {
     });
         
     dispatch.hook('S_DUNGEON_CLEAR_COUNT_LIST', 1, (event) => {
-        if (playerName === event.name) return;
+        if (playerName === event.pid) return;
         
         command.message(' ' + targetName + '\'s Dungeon Clears...');
         for (let i = 0; i < event.dungeons.length; i++) {
