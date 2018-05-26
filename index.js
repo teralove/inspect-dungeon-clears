@@ -19,6 +19,8 @@ module.exports = function InspectDungeonClears(dispatch) {
         9769: "LKNM",
         9794: "TRNM",
         9055: "RG",
+		9720: "AANM",
+		9920: "AAHM",
         // 9766: "SF",
         // 9860: "KC",
         // 9809: "MC",
